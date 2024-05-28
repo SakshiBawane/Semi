@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Number Reversal</title>
+<style>
+body{
+font-family: Arial, sans-serif;
+background-color: #BED754;
+}
+input[type="number"] {
+padding: 9px;
+font-size: 20px;
+margin-bottom: 10px;
+border: 2px solid blue;
+border-radius: 17px;
+}
+input[type="text"].result {
+padding: 6px;
+font-size: 20px;
+border: 1px solid black;
+border-radius: 17px;
+pointer-events: none; /* Disable editing */
+}
+button {
+padding: 10px 7px;
+font-size: 17px;
+cursor: pointer;
+border: 3px solid cyan;
+border-radius: 17px;
+}
+.container
+{
+margin-top:150px;
+margin-left:450px;
+height:330px;
+width:600px;
+border: 7px double black;
+border-radius: 15px;
+background-color: #E95793;
+}
+</style>
+</head>
+<body>
+<div class="container" align="center">
+<h1>Reverse the Numbers</h1>
+<h3>Enter Numbers <input type="number" id="input" ></h3>
+<h3> Reversed Numbers<input type="number" id="result" readonly></h3>
+<button id="reverseButton">Click here to Reverse</button>
+<script>
+const reverseButton = document.getElementById('reverseButton');
+const resultField = document.getElementById('result');
+reverseButton.addEventListener('click', function() {
+const inputNumber = document.getElementById('input').value;
+const reversedNumber = reverseNumber(inputNumber);
+resultField.value = reversedNumber;
+});
+function reverseNumber(number) {
+const reversed = parseFloat(number.toString().split('').reverse().join(''));
+return Math.sign(number) * reversed;
+}
+</script>
+</body>
+</html>
