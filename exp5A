@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>String Length Checker</title>
+<style>
+body{
+font-family: Arial, sans-serif;
+background-color: #818FB4;
+}
+input[type="text"] {
+padding: 10px;
+font-size: 20px;
+margin-bottom: 10px;
+border: 3px solid green;
+}
+input[type="text"].output {
+padding: 10px;
+font-size: 20px;
+border: 3px solid green;
+pointer-events: none; /* Disable editing */
+}
+button {
+padding: 10px 5px;
+font-size: 16px;
+cursor: pointer;
+}
+.container
+{
+margin-top:120px;
+margin-left:300px;
+height:320px;
+width:500px;
+border: 5px inset black;
+border-radius: 15px;
+background-color: #FF204E;
+}
+back
+</style>
+</head>
+<body>
+<div class="container" align="center">
+<h1><p>Calculate Length of String</p></h1>
+<h3>Enter a String <input type="text" id="input" ></h3>
+<h3>Length of String<input type="text" id="output" class="output"
+value=" " readonly></h3><br>
+<button id="checkButton">Check the length</button>
+</div>
+<script>
+const input = document.getElementById('input');
+const checkButton = document.getElementById('checkButton');
+const output = document.getElementById('output');
+checkButton.addEventListener('click', function() {
+const inputValue = input.value;
+const length = inputValue.length;
+output.value = ` ${length}`;
+});
+</script>
+</body>
+</html>
