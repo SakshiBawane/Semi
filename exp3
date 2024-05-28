@@ -1,0 +1,93 @@
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body 
+{
+font-family: Arial, Helvetica, sans-serif;
+box-sizing: border-box;
+background-color:#F27BBD;
+}
+input[type=text], select, textarea {
+ width: 100%;
+ padding: 15px;
+ border: 2px solid #0E46A3;
+ border-radius: 30px;
+ box-sizing: border-box;
+ margin-top: 4px;
+ margin-bottom: 16px;
+ resize: vertical;
+}
+textarea
+{
+height:25%;
+}
+input[type=submit] {
+ background-color: #121481;
+ color: white;
+ padding:10px 20px;
+ margin-left:130px;
+ border: 2px solid black;
+ border-radius: 10px;
+ cursor: pointer;
+}
+input[type=submit]:hover {
+ background-color: #874CCC;
+}
+section {
+ border:8px solid black;
+ padding:10px;
+ height:600px;
+ width:850px;
+ margin-left:350;
+}
+</style>
+</head>
+<body>
+<section>
+<td>
+ <h1 align="center;" style="font-size:30px;"> REGISTRATION FORM </h1>
+ <form name="myForm" onsubmit="validateform()" action="hello.html">
+ <label for="fname">First Name</label>
+ <input type="text" id="fname" name="fname" required>
+<label for="lname">Email-id</label>
+ <input type="text" id="lname" name="email" >
+ <label for="fname">Mobile No</label>
+ <input type="text" id="fname" name="mb" required>
+ <label for="fname">Salary </label>
+ <input type="text" id="fname" name="mb" required>
+ <label for="subject">Address</label>
+ <textarea id="subject" name="subject" style="height:50px"required> 
+</textarea> 
+ <input type="file" onchange="readURL(this);" />
+ <img id="blah" src="#" alt="your image" /> 
+ <input type="submit" value="Submit">
+ </form>
+</section>
+<script> 
+function validateform()
+{ 
+let mailformat = /^\w+([\.-]?\w+)@\w+([\.-]?\w+)(\.\w{2,3})+$/;
+let b=document.myForm.email.value;
+if(b.match(mailformat))
+{
+ return true;
+}
+else
+{
+ alert("Wrong Email Id ");
+}
+}
+function readURL(input) {
+ if (input.files && input.files[0]) {
+ var reader = new FileReader();
+ reader.onload = function (e) {
+ $('#blah')
+ .attr('src', e.target.result)
+ .width(150)
+ .height(200);
+ }; reader.readAsDataURL(input.files[0]);
+ }}
+</script>
+</body>
+</html>
