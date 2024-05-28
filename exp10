@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+body {
+ font-family: Arial, sans-serif;
+ margin: 20px;
+ background-color: #fdfefa;
+}
+select {
+ padding: 10px;
+ margin-right: 20px;
+ border-radius: 5px;
+ border: 1px solid #ccc;
+ font-size: 16px;
+}
+#txtHint {
+ margin-top: 20px;
+}
+table {
+ width: 100%;
+ border-collapse: collapse;
+ margin-top: 20px;
+}
+table, th, td {
+ border: 1px solid #ccc;
+}
+th, td {
+ padding: 12px;
+ text-align: left;
+}
+th {
+ background-color: #f2f2f2;
+}
+tr:nth-child(even) {
+ background-color: #f9f9f9;
+}
+</style>
+<script>
+function showUser() 
+{
+ var xmlhttp = new XMLHttpRequest();
+ xmlhttp.onreadystatechange = function()
+ {
+ if (this.readyState == 4 && this.status == 200) 
+ {
+ document.getElementById("txtHint").innerHTML = this.responseText;
+ }
+ };
+ xmlhttp.open("GET", "family.php?q=" + document.getElementById("users").value + 
+"&order=" + document.getElementById("order").value, true);
+ xmlhttp.send();
+}
+</script>
+</head>
+<body onLoad="showUser()">
+ <select id="users" onchange="showUser()">
+ <option value="0">Select a Student:</option>
+ <option value="1">ayan</option>
+ <option value="2">shakti</option>
+ <option value="3">meher</option>
+ <option value="4">akash</option>
+ </select>
+ <select id="order" onchange="showUser()">
+ <option value="1">Ascending Order</option>
+ <option value="2">Descending Order</option>
+ </select>
+ <br>
+ <div id="txtHint"><b>Student info will be listed here...</b></div>
+</body>
+</html>
