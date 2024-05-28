@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<head>
+<title> student data </title>
+</head>
+<body bgcolor="#B8E7DF">
+<table border="8" width="1200" height="200" align="center">
+<tr>
+<td align="center"><img src="C:\Users\saico\Desktop\login html form\ncerlogo.png" alt="image" height="150" width="150"></td>
+<td colour="red" align="center">
+<p> <h4 style="color:blue"> Nutan Maharashtra Vidya Prasarak Mandal </h4> 
+</p>
+<p> <h2 style="color:brown"> Nutan College Of Engineering and Research 
+</h2> </p>
+<p> <h4 style="color:blue">Department of Computer science & Enggineering 
+</h4> </p>
+</td>
+<td align="center"><img src="C:\Users\saico\Desktop\login html form\trustlogo.png" alt="image" height="150" width="150"></td>
+</tr>
+</table>
+<table bgcolor="#B8E7DF" width="700" height="300" align="center">
+<tr>
+<td colspan="2">
+<h2 align="center"> Student Data </h2> <br> 
+</td>
+</tr>
+<tr>
+<td align="center"> Name: </td> <br>
+<td align="center"><input type="text"> 
+</td>
+</tr>
+<td align="center"> PRN-NO: </td> <br>
+<td align="center"><input type="number" max="13">
+</td>
+</tr>
+<td align="center"> Address: </td> 
+<td align="center"><input type="textarea">
+</td>
+</tr>
+<tr>
+<td align="center"> Gender: </td>
+<td align="center"><input type="text">
+</td>
+</tr>
+<tr>
+<td align="center"> Phone No: </td>
+<td align="center"><input type="text" max="10">
+</td>
+</tr>
+<tr>
+<td align="center"> Class: </td>
+<td align="center"><input type="text">
+</td>
+</tr>
+<td> </td>
+<td> <input type="button" name="submit" value="Submit">
+ </td> 
+</tr>
+</table>
+<table align="center"> 
+<br>
+<tr> <td> <img src="C:\Users\saico\Desktop\login html form\ncer-logo.png" 
+alt="image" height="150" width="150"> </td> </tr>
+<tr> <td> <img src="C:\Users\saico\Desktop\login html form\trust-logo.png" 
+alt="image" height="150" width="150"> </td> </tr>
+</table>
+<a href="#top"> Click here to go to the top </a>
+<a href="#http://www.ncerpune.in/"> <img src="C:\Users\saico\Desktop\login 
+html form\ncer-logo.png" alt="image" height="90" width="90"> </a>
+</body>
+</html>
