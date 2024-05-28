@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Find Prime</title>
+<style>
+body {
+font-family: Arial, sans-serif;
+background-color:#FFC94A;
+background-size: cover; 
+}
+input[type="number"] {
+padding: 8px;
+font-size: 16px;
+margin-bottom: 25px;
+border-radius: 10px;
+border:3px solid #FF204E;}
+input[type="text"] {
+padding: 8px;
+font-size: 16px;
+margin-bottom: 25px;
+width: 200px;
+border-radius: 10px ;
+border:3px solid #FF204E;
+}
+button {
+padding: 7px 20px;
+font-size: 16px;
+cursor: pointer;
+border-radius: 10px;
+border:3px solid #58A399;
+}
+.container
+{
+margin-top:50px;
+margin-left:50px;
+height:350px;
+width:600px;
+border: 25px inset black ;
+border-radius: 10px;
+background-color:#97E7E1;
+}
+</style>
+</head>
+<body>
+<div class="container" align="center">
+<h1>𝐅𝐢𝐧𝐝 𝐏𝐫𝐢𝐦𝐞 𝐍𝐮𝐦𝐛𝐞𝐫</h1>
+<form id="primeForm">
+<h3>Start Range
+<input type="number" id="start" name="start" required></h3>
+<h3>End Range <input type="number" id="end" name="end" 
+required></h3>
+<button type="submit">𝐅𝐢𝐧𝐝 𝐏𝐫𝐢𝐦𝐞</button>
+<input type="text" id="primeNumbers" readonly><br>
+</div>
+</form>
+<script>
+const primeForm = document.getElementById('primeForm');
+const primeNumbersField = document.getElementById('primeNumbers');
+primeForm.addEventListener('submit', function(event) {
+event.preventDefault();
+const start = parseInt(document.getElementById('start').value);
+const end = parseInt(document.getElementById('end').value);
+const primeNumbers = findPrimeNumbers(start, end);
+primeNumbersField.value = ` ${primeNumbers.join(', ')}`;
+});
+function findPrimeNumbers(start, end) {
+const primes = [];
+for (let i = start; i <= end; i++) {
+if (isPrime(i)) {
+primes.push(i);
+}
+}
+return primes;
+}
+function isPrime(num) {
+if (num <= 1) return false;
+if (num <= 3) return true;
+if (num % 2 === 0 || num % 3 === 0) return false;
+let i = 5;
+while (i * i <= num) {
+if (num % i === 0 || num % (i + 2) === 0) return false;
+i += 6;
+}
+return true;
+}
+</script>
+</body>
+</html>
