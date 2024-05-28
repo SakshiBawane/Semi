@@ -1,0 +1,75 @@
+<html>
+<head>
+<title>Website Counter</title>
+</head>
+<style>
+body.website-counter {
+display: flex;
+justify-content: center;
+align-items: center;
+flex-direction: column;
+}
+body {
+text-align: center;
+height: 100vh;
+background-image: url("back.jpg"); /* The image used */
+    background-repeat: no-repeat; /* Do not repeat the image */
+  background-size: cover;
+}
+div{
+display: flex;
+width: 280px;
+margin: 0 auto;
+padding: 20px;
+border: 1px solid black;
+margi-top:200px;
+border-radius: 10px;
+}
+website-counter 
+{
+background-color: #b649ff;
+height: 50px;
+width: 80px;
+color: white;
+border-radius: 70px;
+font-weight: 700;
+font-size: 25px;
+margin-top: 10px;
+}
+.reset {
+ margin-top: 20px;
+background-color: #008cba;
+cursor: pointer;
+font-size: 18px;
+padding: 8px 20px;
+margin-left:100px;
+border-radius: 50px;
+color: white;
+border: 0;
+}
+</style>
+<body>
+<div><h1>Website visit count </h1></div>
+<div class="website-counter"></div>
+<div style="align:center">
+<button class="reset">Reset</button>
+</div>
+</body>
+<script>
+var counterContainer = document.querySelector(".website-counter");
+var resetButton = document.querySelector(".reset ");
+var visitCount = localStorage.getItem("page_view");
+if (visitCount) {
+visitCount = Number(visitCount) + 1; localStorage.setItem("page_view", visitCount);
+} else {
+visitCount = 1;
+localStorage.setItem("page_view", 1);
+}
+counterContainer.innerHTML = visitCount;
+resetButton.addEventListener("click", () => {
+visitCount = 1;
+localStorage.setItem("page_view", 1);
+counterContainer.innerHTML = visitCount;
+});
+</script>
+</html>
