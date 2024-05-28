@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <title>Digital Clock</title>
+ <style>
+body {
+font-family: Arial, sans-serif;
+background-color:#6DC5D1;
+background-size: cover; 
+textcolor:white;
+}
+ #clock {
+ font-family: "Algerian";
+ font-size: 70px;
+ text-align: center;
+font-color:white;
+background-color: #FF76CE;
+border: 35px inset #FF0080;
+ border-radius: 10px;
+ height:250px;
+width:900px;
+padding:80px;
+margin-top:50px;
+margin-left:200px;
+ }
+ </style>
+</head>
+<body>
+<h1 align="center" style ="font-size:80px;" > DIGITAL CLOCK </h1>
+ <div id="clock">
+ <?php
+ date_default_timezone_set('Your/Timezone'); 
+ $dateTime = date('Y-m-d H:i:s');
+ $date = date('Y-m-d');
+ echo "Server Date: $date<br><br>";
+ echo "Server Time: $dateTime";
+ ?>
+ </div>
+ <script>
+ 
+ function updateClock() {
+ var now = new Date();
+ var hours = now.getHours();
+ var minutes = now.getMinutes();
+ var seconds = now.getSeconds();
+ 
+ hours = ('0' + hours).slice(-2);
+ minutes = ('0' + minutes).slice(-2);
+ seconds = ('0' + seconds).slice(-2);
+ 
+ document.getElementById('clock').innerHTML = "Server Date: <?php 
+echo $date; ?><br>Server Time: " + hours + ":" + minutes + ":" + seconds;
+ setTimeout(updateClock, 1000);
+ }
+ 
+ updateClock();
+ </script>
+</body>
+</html>
